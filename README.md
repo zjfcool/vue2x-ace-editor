@@ -52,8 +52,10 @@ themes.forEach(theme => {
     <div>toolbar or something</div>    
 </editor>
 ```
+
 Props
 =
+
 | name      | default    | type      | description     |
 | ---------- | :-----------:  | :-----------: | :-----------: |
 | content     | ''     | String | 内容 |
@@ -65,8 +67,10 @@ Props
 | className     | 'vue-ace-editor'     | String | 自定义编辑器container class |
 | readonly     | false     | Boolean | true的时候编辑器不可编辑 |
 | options     | {}     | Object | [ace](https://ace.c9.io/) options |
+
 Events
 =
+
 | name      | return    | type      | description     |
 | ---------- | :-----------:  | :-----------: | :-----------: |
 | onChange     | editor     | Object | 编辑器内容发生变化时触发 |
@@ -76,8 +80,10 @@ Events
 | onCopy     | editor     | Object | 复制代码时触发 |
 | onPaste     | editor     | Object | 粘贴代码时触发 |
 | init     | editor     | Object | 初始化 |
+
 Functions
 =
+
 | name      | return    | params      | description     |
 | ---------- | :-----------:  | :-----------: | :-----------: |
 | setMode     | editor     |  | 设置编程语言 |
