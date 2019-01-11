@@ -1,0 +1,28 @@
+{
+  "name": "vue2x-ace-editor",
+  "version": "0.0.1",
+  "description": "ace editor component by vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjfcool/vue2x-ace-editor.git"
+  },
+  "keywords": [
+    "vue",
+    "ace",
+    "brace",
+    "editor"
+  ],
+  "author": "zjfcool",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zjfcool/vue2x-ace-editor/issues"
+  },
+  "homepage": "https://github.com/zjfcool/vue2x-ace-editor#readme",
+  "dependencies": {
+    "brace": "^0.11.1"
+  }
+}
