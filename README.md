@@ -20,7 +20,9 @@ export default {
 }
 ```
 * Introduction of necessary documents
+1. 方法一全局引入
 ```javascript
+import ace from 'brace'
 import 'brace/ext/language_tools';
 const languages = ['python'];
 const themes = ['eclipse'];
@@ -32,6 +34,24 @@ languages.forEach(lang => {
 themes.forEach(theme => {
     require(`brace/theme/${theme}`);
 });
+```
+2. 方法二,init时加载资源
+```javascript
+methods: {
+    editorInit() {
+        require("brace/ext/language_tools");
+        const languages = ["python"];
+        const themes = ["eclipse"];
+        languages.forEach(lang => {
+            require(`brace/mode/${lang}`);
+            require(`brace/snippets/${lang}`);
+        });
+
+        themes.forEach(theme => {
+            require(`brace/theme/${theme}`);
+        });
+    }
+}
 ```
 * use component in template
 ``` html
@@ -48,7 +68,8 @@ themes.forEach(theme => {
     :fontSize='14' 
     :lang="'python'" 
     :theme="'eclipse'"
-    @onChange="editorChange">
+    @onChange="editorChange"
+    @init="editorInit">
     <div>toolbar or something</div>    
 </editor>
 ```
