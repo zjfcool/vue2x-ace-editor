@@ -2,6 +2,7 @@ vue2x-ace-editor
 =
 [ace](https://ace.c9.io/) editor component by vue
 
+[demo](https://zjfcool.github.io/vue2x-ace-editor/example/dist)
 How to use
 =
 * Install
