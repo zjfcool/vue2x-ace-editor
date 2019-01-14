@@ -1,6 +1,7 @@
 <template>
   <div>
     <vue-ace-editor
+      :content="content"
       :fontSize="14"
       height="300px"
       lang="python"
@@ -20,7 +21,20 @@
 
 export default {
   name: "home",
-  components: {},
+  data() {
+    return {
+      content: `
+# importing Magics module
+from Magics.macro import *
+
+
+# Setting of the output file name
+output = output(output_formats=['png'],
+                output_name_first_page_number='off',
+                output_name='odb_step2')
+      `
+    };
+  },
   methods: {
     editorInit() {
       require("brace/ext/language_tools");
