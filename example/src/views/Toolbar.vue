@@ -47,12 +47,13 @@ export default {
   padding: 8px;
   border: 1px solid #e6e6e6;
   color: #666;
+  font-size: 12px;
   border-radius: 2px;
 }
 .btn-groups li:hover {
   cursor: pointer;
 }
-.btn-groups li + .btn-groups li {
+.btn-groups li + li {
   margin-left: 8px;
 }
 </style>

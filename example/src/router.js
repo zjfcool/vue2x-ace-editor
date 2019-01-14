@@ -18,6 +18,11 @@ export default new Router({
       // this generates a separate chunk (toolbar.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "toolbar" */ './views/Toolbar.vue')
+    },
+    {
+      path: '/auto',
+      name: 'autoComplete',
+      component: () => import(/* webpackChunkName: "autoComplete" */ './views/AutoComplete.vue')
     }
   ]
 })
