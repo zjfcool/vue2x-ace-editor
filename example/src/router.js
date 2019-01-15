@@ -23,6 +23,11 @@ export default new Router({
       path: '/auto',
       name: 'autoComplete',
       component: () => import(/* webpackChunkName: "autoComplete" */ './views/AutoComplete.vue')
+    },
+    {
+      path: '/set',
+      name: 'setComplete',
+      component: () => import(/* webpackChunkName: "setComplete" */ './views/SetComplete.vue')
     }
   ]
 })
