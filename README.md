@@ -116,7 +116,7 @@ Functions
 | getValue     | editor     |  | 获取内容 |
 | setOptions     | editor     |  | 设置配置项 |
 | setReadonly     | editor     |  | 设置readonly |
-| setCompleteData     | editor     | Array() | 添加实时提示代码 |
+| setCompleteData     | editor     | [Array](https://github.com/zjfcool/vue2x-ace-editor/blob/master/example/src/views/SetComplete.vue) | 添加实时提示代码 |
 | setAutocomplete     | editor     |  | 主动触发代码提示功能 |
 | getRowCol     | editor     |  | 获取行列 |
 | resize     | editor     |  |  |
