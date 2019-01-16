@@ -161,6 +161,10 @@ export default {
   mounted() {
     this.init();
   },
+  beforeDestroy: function() {
+    this.editor.destroy();
+    this.editor.container.remove();
+  },
   watch: {
     fontSize() {
       this.setFontSize();
@@ -173,6 +177,16 @@ export default {
     },
     lang() {
       this.setMode();
+    },
+    height: function() {
+      this.$nextTick(() => {
+        this.resize();
+      });
+    },
+    width: function() {
+      this.$nextTick(() => {
+        this.resize();
+      });
     }
   }
 };
