@@ -14,9 +14,10 @@ languages.forEach(lang => {
 themes.forEach(theme => {
   require(`brace/theme/${theme}`);
 });
-import VueAceEditor from 'vue2x-ace-editor'
+import {VueAceEditor,VueSplitEditor} from 'vue2x-ace-editor'
 
 Vue.component(VueAceEditor.name, VueAceEditor);
+Vue.component(VueSplitEditor.name, VueSplitEditor);
 
 Vue.config.productionTip = false
 

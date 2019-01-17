@@ -4,6 +4,10 @@ vue2x-ace-editor
 
 [demo](https://zjfcool.github.io/vue2x-ace-editor/example/dist)
 
+Update
+=
+1. 2019-1-17 添加VueSplitEditor组件
+
 How to use
 =
 * Install
@@ -11,6 +15,7 @@ How to use
 npm install --save vue2x-ace-editor
 ```
 * Import component
+1. 默认
 ```javascript
 import Editor from 'vue2x-ace-editor';
 export default {
@@ -21,6 +26,19 @@ export default {
     ...
 }
 ```
+2. 按需
+```javascript
+import {VueAceEditor,VueSplitEditor} from 'vue2x-ace-editor';
+export default {
+    ...
+    components:{
+        VueAceEditor,
+        VueSplitEditor
+    }
+    ...
+}
+```
+
 * Introduction of necessary documents
 1. 方法一全局引入
 ```javascript
@@ -56,6 +74,7 @@ methods: {
 }
 ```
 * use component in template
+1. VueAceEditor
 ``` html
 <editor 
     height="300px" 
@@ -75,9 +94,28 @@ methods: {
     <div>toolbar or something</div>    
 </editor>
 ```
-
-Props
+2. VueSplitEditor
+``` html
+<vue-split-editor
+      ref="editor"
+      lang="python"
+      theme="monokai"
+      height="330px"
+      :splits="2"
+      :options="{
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true,
+        tabSize: 2
+       }"
+      :content="content2"
+      orientation="below"
+    ></vue-split-editor>
+```
+VueAceEditor
 =
+Props
+-
 
 | name      | default    | type      | description     |
 | ---------- | :-----------:  | :-----------: | :-----------: |
@@ -89,10 +127,12 @@ Props
 | height     | '100%'     | String | 编辑器高度 |
 | className     | 'vue-ace-editor'     | String | 自定义编辑器container class |
 | readonly     | false     | Boolean | true的时候编辑器不可编辑 |
-| options     | {}     | Object | [ace](https://ace.c9.io/) options |
+| options     | {}     | Object | [ace options](https://github.com/ajaxorg/ace/wiki/Configuring-Ace)  |
+| orientation     | 'beside'('below' or 'beside')     | String | bewlow为纵向排列，beside为横向排列 |
+| splits     | 2     | Number | 分割数目 |
 
 Events
-=
+-
 
 | name      | return    | type      | description     |
 | ---------- | :-----------:  | :-----------: | :-----------: |
@@ -105,7 +145,7 @@ Events
 | init     | editor     | Object | 初始化 |
 
 Functions
-=
+-
 
 | name      | return    | params      | description     |
 | ---------- | :-----------:  | :-----------: | :-----------: |
@@ -125,3 +165,51 @@ Functions
 | save     | editor     | storageName | 保存到localstorage |
 | undo     | editor     |  |  |
 | redo     | editor     |  |  |
+
+VueSplitEditor
+=
+Props
+-
+
+| name      | default    | type      | description     |
+| ---------- | :-----------:  | :-----------: | :-----------: |
+| content     | []     | Array | 各个split的内容 |
+| theme     | ''     | String | 主题 |
+| lang     | ''     | String | 编程语言 |
+| fontSize     | 12     | Number | 字体大小 |
+| width     | '100%'     | String | 编辑器宽度 |
+| height     | '100%'     | String | 编辑器高度 |
+| className     | 'vue-ace-editor'     | String | 自定义编辑器container class |
+| readonly     | false     | Boolean | true的时候编辑器不可编辑 |
+| options     | {}     | Object | [ace options](https://github.com/ajaxorg/ace/wiki/Configuring-Ace)  |
+
+Events
+-
+
+| name      | return    | type      | description     |
+| ---------- | :-----------:  | :-----------: | :-----------: |
+| onChange     | obj     | Object | 编辑器内容发生变化时触发 |
+| onFocus     | split     | Object | 光标focus时触发  |
+| onBlur     | split    | Object | 光标blur时触发 |
+| onInput     | split     | Object | 输入时触发 |
+| onCopy     | txt(复制内容)     | String | 复制代码时触发 |
+| onPaste     | obj     | Object | 粘贴代码时触发 |
+| init     |      |  | 初始化 |
+
+Functions
+-
+
+| name      | return    | params      | description     |
+| ---------- | :-----------:  | :-----------: | :-----------: |
+| setMode     | split     |  | 设置编程语言 |
+| setTheme     | split     |  | 设置主题  |
+| setFontSize     | split    |  | 设置字体大小 |
+| setValue     | split     |  | 设置内容 |
+| getValue     | value:Array     |  | 获取各个editor的内容 |
+| setOptions     | split     |  | 设置配置项 |
+| setReadonly     | split     |  | 设置readonly |
+| setCompleteData     |      | [Array](https://github.com/zjfcool/vue2x-ace-editor/blob/master/example/src/views/SetComplete.vue) | 添加实时提示代码 |
+| resize     | split     |  |  |
+| setRange     | range     | (startRow, startCol, endRow, endCol) |  |
+| setOrientation     |      |  | 设置排列方式 |
+| setSplits     |      |  | 设置分割数量 |

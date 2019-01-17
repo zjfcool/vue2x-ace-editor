@@ -178,12 +178,12 @@ export default {
     lang() {
       this.setMode();
     },
-    height: function() {
+    height() {
       this.$nextTick(() => {
         this.resize();
       });
     },
-    width: function() {
+    width() {
       this.$nextTick(() => {
         this.resize();
       });

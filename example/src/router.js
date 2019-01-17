@@ -28,6 +28,11 @@ export default new Router({
       path: '/set',
       name: 'setComplete',
       component: () => import(/* webpackChunkName: "setComplete" */ './views/SetComplete.vue')
+    },
+    {
+      path: '/split',
+      name: 'split',
+      component: () => import(/* webpackChunkName: "split" */ './views/SplitEditor.vue')
     }
   ]
 })

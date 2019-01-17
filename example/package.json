@@ -9,7 +9,7 @@
   "dependencies": {
     "vue": "^2.5.21",
     "vue-router": "^3.0.1",
-    "vue2x-ace-editor": "^0.0.5"
+    "vue2x-ace-editor": "0.0.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",
