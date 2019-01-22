@@ -7,6 +7,7 @@ vue2x-ace-editor
 Update
 =
 1. 2019-1-17 添加VueSplitEditor组件
+2. 2019-1-21 添加VueStaticHighlight组件
 
 How to use
 =
@@ -28,12 +29,13 @@ export default {
 ```
 2. 按需
 ```javascript
-import {VueAceEditor,VueSplitEditor} from 'vue2x-ace-editor';
+import {VueAceEditor,VueSplitEditor,VueStaticHighlight} from 'vue2x-ace-editor';
 export default {
     ...
     components:{
         VueAceEditor,
-        VueSplitEditor
+        VueSplitEditor,
+        VueStaticHighlight
     }
     ...
 }
@@ -111,6 +113,14 @@ methods: {
       :content="content2"
       orientation="below"
     ></vue-split-editor>
+```
+3. VueStaticHighlight
+```html
+<vue-static-highlight
+  content="balabala"
+  theme="chrome"
+  lang="text">
+</vue-static-highlight>
 ```
 VueAceEditor
 =
@@ -213,3 +223,28 @@ Functions
 | setRange     | range     | (startRow, startCol, endRow, endCol) |  |
 | setOrientation     |      |  | 设置排列方式 |
 | setSplits     |      |  | 设置分割数量 |
+
+VueStaticHighlight
+=
+
+Props
+-
+| name      | default    | type      | description     |
+| ---------- | :-----------:  | :-----------: | :-----------: |
+| content     | "hello world"     | String | 内容 |
+| theme     | 'twilight'     | String | 主题 |
+| lang     | 'text'     | String | 编程语言 |
+| width     | '100%'     | String | 编辑器宽度 |
+| height     | '100%'     | String | 编辑器高度 |
+| gutter     | true     | Boolean | 是否显示左侧行号默认显示 |
+| trim     | false     | Boolean | 是否忽略两侧空字符，默认不忽略 |
+| startLineNumber     | 1     | Number | 开始行号 |
+| className     | 'static-highlight-editor'     | String | 自定义编辑器container class |
+
+
+Functions
+-
+
+| name      | return    | params      | description     |
+| ---------- | :-----------:  | :-----------: | :-----------: |
+| getValue     | content     |  | 获取文本内容 |

@@ -33,6 +33,11 @@ export default new Router({
       path: '/split',
       name: 'split',
       component: () => import(/* webpackChunkName: "split" */ './views/SplitEditor.vue')
+    },
+    {
+      path: '/static_highlight',
+      name: 'static_highlight',
+      component: () => import(/* webpackChunkName: "static_highlight" */ './views/StaticHighlight.vue')
     }
   ]
 })

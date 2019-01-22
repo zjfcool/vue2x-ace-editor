@@ -27,48 +27,41 @@ export default {
   data() {
     return {
       isSaveBtnDisabled: true,
-      isRedoBtnDisabled:false,
-      isUndoBtnDisabled:false,
-      content:''
+      isRedoBtnDisabled: false,
+      isUndoBtnDisabled: false,
+      content: ""
     };
   },
   methods: {
     editorInit() {
       require("brace/ext/language_tools");
-      const languages = ["python"];
-      const themes = ["eclipse"];
-      languages.forEach(lang => {
-        require(`brace/mode/${lang}`);
-        require(`brace/snippets/${lang}`);
-      });
-
-      themes.forEach(theme => {
-        require(`brace/theme/${theme}`);
-      });
-      if(localStorage.saveEditor){
-        this.content = localStorage.saveEditor
+      require(`brace/mode/python`);
+      require(`brace/snippets/python`);
+      require(`brace/theme/eclipse`);
+      if (localStorage.saveEditor) {
+        this.content = localStorage.saveEditor;
       }
     },
-    editorInput(editor){
-      this.updateBtnStatus(editor)
+    editorInput(editor) {
+      this.updateBtnStatus(editor);
     },
     copyText() {
       copy(this.$refs.editor.getValue());
     },
     save() {
-      if(this.isSaveBtnDisabled) return;
+      if (this.isSaveBtnDisabled) return;
       const editor = this.$refs.editor.save("saveEditor");
       this.updateBtnStatus(editor);
     },
-    redo(){
-      if(this.isRedoBtnDisabled) return;
-      const editor = this.$refs.editor.redo()
-      this.updateBtnStatus(editor)
+    redo() {
+      if (this.isRedoBtnDisabled) return;
+      const editor = this.$refs.editor.redo();
+      this.updateBtnStatus(editor);
     },
-    undo(){
-      if(this.isUndoBtnDisabled) return;
-      const editor = this.$refs.editor.undo()
-      this.updateBtnStatus(editor)
+    undo() {
+      if (this.isUndoBtnDisabled) return;
+      const editor = this.$refs.editor.undo();
+      this.updateBtnStatus(editor);
     },
     updateBtnStatus(editor) {
       this.isSaveBtnDisabled = editor.session.getUndoManager().isClean();
@@ -102,7 +95,7 @@ export default {
 .btn-groups li + li {
   margin-left: 8px;
 }
-.btn-groups li.disable{
+.btn-groups li.disable {
   cursor: not-allowed;
   background-color: #e6e6e6;
 }

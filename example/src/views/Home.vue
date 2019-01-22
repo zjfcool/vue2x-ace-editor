@@ -38,16 +38,9 @@ output = output(output_formats=['png'],
   methods: {
     editorInit() {
       require("brace/ext/language_tools");
-      const languages = ["python"];
-      const themes = ["eclipse"];
-      languages.forEach(lang => {
-        require(`brace/mode/${lang}`);
-        require(`brace/snippets/${lang}`);
-      });
-
-      themes.forEach(theme => {
-        require(`brace/theme/${theme}`);
-      });
+      require(`brace/mode/python`);
+      require(`brace/snippets/python`);
+      require(`brace/theme/eclipse`);
     },
     editorChange(editor) {
       console.log("changed", editor.getValue());
