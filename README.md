@@ -107,7 +107,8 @@ methods: {
 <vue-static-highlight
   content="balabala"
   theme="chrome"
-  lang="text">
+  lang="text"
+  @init="init">
   <div>toolbar or something</div> 
 </vue-static-highlight>
 ```

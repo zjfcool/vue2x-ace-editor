@@ -3,6 +3,7 @@
     <vue-ace-editor
       ref="editor"
       :fontSize="14"
+      content="#please input 'test'"
       height="300px"
       lang="python"
       theme="eclipse"

@@ -108,8 +108,8 @@ Props
 | name      | default    | type      | description     |
 | ---------- | :-----------:  | :-----------: | :-----------: |
 | content     | "hello world"     | String | 内容 |
-| theme     | 'twilight'     | String | 主题 |
-| lang     | 'text'     | String | 编程语言 |
+| theme     | ''     | String | 主题 |
+| lang     | ''     | String | 编程语言 |
 | width     | '100%'     | String or Number | 编辑器宽度 |
 | height     | '100%'     | String or Number | 编辑器高度 |
 | gutter     | true     | Boolean | 是否显示左侧行号默认显示 |
@@ -117,6 +117,12 @@ Props
 | startLineNumber     | 1     | Number | 开始行号 |
 | className     | 'static-highlight-editor'     | String | 自定义编辑器container class |
 
+Events
+-
+
+| name      | return    | type      | description     |
+| ---------- | :-----------:  | :-----------: | :-----------: |
+| init     |      |  | 初始化 |
 
 Functions
 -

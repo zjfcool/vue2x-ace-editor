@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["static_highlight"],{f774:function(t,i,c){"use strict";c.r(i);var e=function(){var t=this,i=t.$createElement,c=t._self._c||i;return c("div",[c("vue-static-highlight",{attrs:{content:".css{color:red;}",lang:"css",width:"50%"}})],1)},n=[],s=(c("cadf"),c("551c"),c("097d"),{name:"static-highligh"}),l=s,a=c("2877"),h=Object(a["a"])(l,e,n,!1,null,null,null);h.options.__file="StaticHighlight.vue";i["default"]=h.exports}}]);
-//# sourceMappingURL=static_highlight.787135ab.js.map

@@ -1,6 +1,6 @@
 {
   "name": "vue2x-ace-editor",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "ace editor component by vue",
   "main": "index.js",
   "scripts": {

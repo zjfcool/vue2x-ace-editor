@@ -15,11 +15,11 @@ export default {
   props: {
     lang: {
       type: String,
-      default: "text"
+      default: ""
     },
     theme: {
       type: String,
-      default: "twilight"
+      default: ""
     },
     gutter: {
       type: Boolean,
@@ -67,25 +67,19 @@ export default {
   },
   methods: {
     init() {
-      const that = this;
-      Promise.all([
-        import(`brace/mode/${this.lang}`),
-        import(`brace/theme/${this.theme}`)
-      ])
-        .then(() => {
-          highlight(
-            this.$refs.editor,
-            {
-              mode: `ace/mode/${this.lang}`,
-              theme: `ace/theme/${this.theme}`,
-              startLineNumber: that.startLineNumber,
-              showGutter: that.gutter, //是否显示行数
-              trim: that.trim //是否去除前后空字符
-            },
-            highlighted => {}
-          );
-        })
-        .catch(err => console.log(err));
+      this.$emit("init");
+      if(this.lang===''||this.theme==='') return;
+      highlight(
+        this.$refs.editor,
+        {
+          mode: `ace/mode/${this.lang}`,
+          theme: `ace/theme/${this.theme}`,
+          startLineNumber: this.startLineNumber,
+          showGutter: this.gutter, //是否显示行数
+          trim: this.trim //是否去除前后空字符
+        },
+        highlighted => {}
+      );
     },
     getValue() {
       return this.content;

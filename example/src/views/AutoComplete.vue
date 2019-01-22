@@ -2,6 +2,7 @@
   <div class="auto-complete">
     <vue-ace-editor
       :fontSize="14"
+      content="#please input something ..."
       height="300px"
       lang="python"
       theme="eclipse"
