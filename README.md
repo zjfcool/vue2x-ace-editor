@@ -108,6 +108,7 @@ methods: {
   content="balabala"
   theme="chrome"
   lang="text">
+  <div>toolbar or something</div> 
 </vue-static-highlight>
 ```
 [VueAceEditor|VueSplitEditor|VueStaticHighlight Document](https://github.com/zjfcool/vue2x-ace-editor/blob/master/editor/README.md)

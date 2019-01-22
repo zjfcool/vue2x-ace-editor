@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/toolbar">Toolbar</router-link>|
-      <router-link to="/auto">AutoComplete</router-link>|
-      <router-link to="/set">SetComplete</router-link>|
-      <router-link to="/split">Split</router-link>|
-      <router-link to="/static_highlight">StaticHighligh</router-link>
+      <router-link to="/">基本</router-link> |
+      <router-link to="/toolbar">自定义工具条</router-link>|
+      <router-link to="/auto">自动提示</router-link>|
+      <router-link to="/set">自定义提示</router-link>|
+      <router-link to="/split">分割editor</router-link>|
+      <router-link to="/static_highlight">任意静态代码片段高亮</router-link>
     </div>
     <router-view/>
   </div>
