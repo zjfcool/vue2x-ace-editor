@@ -1,7 +1,7 @@
 <template>
-  <div class="editor-container" :style="{width:width,height:height}">
+  <div class="editor-container" :style="{width:cW,height:cH}">
     <slot></slot>
-    <div ref="editor" :class="className" :style="{width:width,height:height}"></div>
+    <div ref="editor" :class="className" :style="{width:cW,height:cH}"></div>
   </div>
 </template>
 <script>
@@ -26,11 +26,11 @@ export default {
       default: ""
     },
     width: {
-      type: String,
+      type: [String,Number],
       default: "100%"
     },
     height: {
-      type: String,
+      type: [String,Number],
       default: "100%"
     },
     className: {
@@ -51,6 +51,18 @@ export default {
       editor: null,
       session: null
     };
+  },
+  computed: {
+    cH() {
+      if (typeof this.height === "number") return this.height + "px";
+      if (typeof this.height === "string") return this.height;
+      return "";
+    },
+    cW() {
+      if (typeof this.width === "number") return this.width + "px";
+      if (typeof this.width === "string") return this.width;
+      return "";
+    }
   },
   methods: {
     init() {
