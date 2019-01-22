@@ -42,7 +42,8 @@ export default {
 ```
 
 * Introduction of necessary documents
-`注意：引入资源时最好是以静态的方式引入，动态的方式引入，打包时webpack会将url里的变量替换为正则 .* 进而打包了不相关文件。(如: import('brace/ext/'+var),将打包ext文件下面的所有文件。)`
+
+    `注意：引入资源时最好是以静态的方式引入，动态的方式引入，打包时webpack会将url里的变量替换为正则 .* 进而打包了不相关文件。(如: import('brace/ext/'+var),将打包ext文件下面的所有文件。)`
 1. 方法一全局引入
 ```javascript
 import ace from 'brace'
