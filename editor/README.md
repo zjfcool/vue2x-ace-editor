@@ -14,8 +14,6 @@ Props
 | className     | 'vue-ace-editor'     | String | 自定义编辑器container class |
 | readonly     | false     | Boolean | true的时候编辑器不可编辑 |
 | options     | {}     | Object | [ace options](https://github.com/ajaxorg/ace/wiki/Configuring-Ace)  |
-| orientation     | 'beside'('below' or 'beside')     | String | bewlow为纵向排列，beside为横向排列 |
-| splits     | 2     | Number | 分割数目 |
 
 Events
 -
@@ -68,6 +66,8 @@ Props
 | className     | 'vue-ace-editor'     | String | 自定义编辑器container class |
 | readonly     | false     | Boolean | true的时候编辑器不可编辑 |
 | options     | {}     | Object | [ace options](https://github.com/ajaxorg/ace/wiki/Configuring-Ace)  |
+| orientation     | 'beside'('below' or 'beside')     | String | bewlow为纵向排列，beside为横向排列 |
+| splits     | 2     | Number | 分割数目 |
 
 Events
 -
