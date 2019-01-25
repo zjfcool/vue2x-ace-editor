@@ -14,7 +14,8 @@
     "vue",
     "ace",
     "brace",
-    "editor"
+    "editor",
+    "highlight"
   ],
   "author": "zjfcool",
   "license": "ISC",

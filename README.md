@@ -1,6 +1,6 @@
 vue2x-ace-editor
 =
-
+[![](https://img.shields.io/npm/v/vue2x-ace-editor.svg)](https://www.npmjs.com/package/vue2x-ace-editor)
 [ace](https://ace.c9.io/) editor component by vue
 
 Example
@@ -9,9 +9,9 @@ Example
 
 Introduction
 =
-* VueSplitEditor: 分成一个或多个editor；
-* VueStaticHighlight: 单纯高亮多种语言；
-* VueAceEditor: 代码编辑器；
+* VueSplitEditor: split one or more editor;
+* VueStaticHighlight: Simply highlighting multiple languages;
+* VueAceEditor: [Customizable Code Tips](https://github.com/zjfcool/vue2x-ace-editor/blob/master/example/src/views/SetComplete.vue);
 
 How to use
 =
@@ -22,7 +22,7 @@ npm install --save vue2x-ace-editor
 ```
 Import component
 -
-* 默认
+* default
 ```javascript
 import Editor from 'vue2x-ace-editor';
 export default {
@@ -33,7 +33,7 @@ export default {
     ...
 }
 ```
-* 按需
+* on demand
 ```javascript
 import {VueAceEditor,VueSplitEditor,VueStaticHighlight} from 'vue2x-ace-editor';
 export default {
@@ -47,10 +47,10 @@ export default {
 }
 ```
 
-Introduction of necessary documents
+Introducing dependency
 -
-`注意：引入资源时最好是以静态的方式引入，动态的方式引入，打包时webpack会将url里的变量替换为正则 .* 进而打包了不相关文件。(如: import('brace/ext/'+var),将打包ext文件下面的所有文件。)`
-* 方法一全局引入
+`Note: When introducing resources, it is better to introduce them in a static way and in a dynamic way. When packaging, webpack will replace the variables in the URL with regular. * and then pack the irrelevant files. (e.g.'import ('brace/ext/'+var), all the files below the EXT file will be packaged. )`
+* introduce globally
 ```javascript
 import ace from 'brace'
 import 'brace/ext/language_tools';
@@ -58,14 +58,14 @@ import 'brace/mode/python'
 import 'brace/snippets/python';
 import 'brace/theme/eclipse';
 ```
-* 方法二,init时加载资源
+* introduce initially 
 ```javascript
 methods: {
     editorInit() {
         require("brace/ext/language_tools");
-        require(`brace/mode/python`);
-        require(`brace/snippets/python`);
-        require(`brace/theme/eclipse`);
+        require("brace/mode/python");
+        require("brace/snippets/python");
+        require("brace/theme/eclipse");
     }
 }
 ```
