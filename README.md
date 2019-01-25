@@ -1,6 +1,7 @@
 vue2x-ace-editor
 =
 [![](https://img.shields.io/npm/v/vue2x-ace-editor.svg)](https://www.npmjs.com/package/vue2x-ace-editor)
+
 [ace](https://ace.c9.io/) editor component by vue
 
 Example
