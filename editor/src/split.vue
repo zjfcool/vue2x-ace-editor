@@ -199,6 +199,15 @@ export default {
     },
     setSplits() {
       this.editor.env.split.setSplits(this.splits);
+      this.split.forEach(editor => {
+        editor.$blockScrolling = Infinity;
+        editor.on("focus", this.onFocus);
+        editor.on("blur", this.onBlur);
+        editor.on("copy", this.onCopy);
+        editor.on("paste", this.onPaste);
+        editor.on("change", this.onChange);
+        editor.on("input", this.onInput);
+      });
     }
   },
   mounted() {

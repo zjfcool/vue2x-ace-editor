@@ -1,5 +1,13 @@
 <template>
   <div class="split">
+    <select v-model="orientation">
+      <option v-for="item in orientationOptions" :key="item.id" :value="item.id">{{item.label}}</option>
+    </select>
+    <div class="split-num-controller">
+      <input type="button" @click="decrement" value="-">
+      {{splits}}
+      <input type="button" @click="increment" value="+">
+    </div>
     <vue-split-editor
       ref="editor"
       @init="editorInit"
@@ -7,8 +15,8 @@
       lang="python"
       theme="eclipse"
       height="330px"
-      :splits="2"
-      orientation="below"
+      :splits="splits"
+      :orientation="orientation"
       :options="{
         enableBasicAutocompletion: true,
         enableSnippets: true,
@@ -25,36 +33,55 @@ export default {
   name: "split-editor",
   data() {
     return {
-      content: ["hello", "world"],
-      retContent: []
+      content: [],
+      retContent: [],
+      splits: 2,
+      orientation: "beside",
+      orientationOptions: [
+        {
+          id: "below",
+          label: "below"
+        },
+        {
+          id: "beside",
+          label: "beside"
+        }
+      ]
     };
   },
   methods: {
-    editorInit() {
-       
+    initContent() {
+      this.content = new Array(this.splits);
+    },
+    editorInit() {},
+    decrement() {
+      if(this.splits===1) return; 
+      this.splits--;
+    },
+    increment() {
+      this.splits++;
     },
     editorChange(obj) {
-      this.$refs.editor.setCompleteData([
-        {
-          name: "test",//名称
-          value: "test",//值
-          caption: "test",//字幕，展示在列表的内容
-          meta: "test",//展示类型
-          type: "local",//类型
-          score: 1000 // 分数越大排在越上面
-        }
-      ])
-      console.log(obj)
       this.retContent = obj.value;
+      console.log(this.retContent)
     }
   },
   watch: {
     retContent(newArr, oldArr) {
       newArr.forEach((item, index) => {
         if (item !== oldArr[index]) {
-          console.log(this.$refs.editor.split.getEditor(index))
+          // console.log(this.$refs.editor.split.getEditor(index))
         }
       });
+    },
+    splits: {
+      handler: function(num) {
+        this.initContent();
+        this.retContent.forEach((item, index) => {
+          this.content[index] = item;
+        });
+      },
+      immediate: true
     }
   }
 };
@@ -62,5 +89,8 @@ export default {
 
 <style lang="css" scoped>
 .split {
+}
+.split-num-controller {
+  display: inline-block;
 }
 </style>
