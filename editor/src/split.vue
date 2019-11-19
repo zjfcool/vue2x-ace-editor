@@ -77,7 +77,7 @@ export default {
   methods: {
     init() {
       this.editor = ace.edit(this.$refs.editor);
-      this.$emit("init");
+      this.$emit("init", this.editor);
       this.split = new Split(
         this.editor.container,
         `ace/theme/${this.theme}`,
