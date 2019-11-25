@@ -69,7 +69,7 @@ export default {
       this.editor = ace.edit(this.$refs.editor);
       this.editor.$blockScrolling = Infinity;
       this.session = this.editor.getSession();
-      this.$emit("init");
+      this.$emit("init", this.editor);
       this.setMode();
       this.setTheme();
       this.setFontSize();
